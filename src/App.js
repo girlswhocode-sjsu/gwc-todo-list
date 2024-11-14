@@ -2,8 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Start from './pages/Start'
 import Signup from './pages/Signup'
 import Home from './pages/Home'
+import Login from './pages/Login'
 
-// import login page
 // import archive page
 
 function App() {
@@ -16,8 +16,8 @@ function App() {
             <Route path='/' element={<Start />} />
             <Route path='/Signup' element={<Signup />} />
             <Route path='/Home' element={<Home />} />
+            <Route path='/Login' element={<Login />} />
             
-            {/* add login path */}
             {/* add archive path */}
 
           </Routes>

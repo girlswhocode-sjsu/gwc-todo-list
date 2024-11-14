@@ -1,20 +1,12 @@
 import React, { useState } from 'react';
 
-function Signup() {
-  const [name, setName] = useState('');
+function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleSignUp = (e) => {
+  const handleSignIn = (e) => {
     e.preventDefault();
-    // Add validation (e.g., checking if passwords match)
-    if (password !== confirmPassword) {
-      alert("Passwords do not match.");
-      return;
-    }
-    // Logic for handling sign-up (e.g., API call)
-    console.log('Name:', name);
+    // Logic for handling sign-in goes here (e.g., form submission, API call)
     console.log('Email:', email);
     console.log('Password:', password);
   };
@@ -22,24 +14,9 @@ function Signup() {
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-80">
-        <h2 className="text-2xl font-bold text-center mb-6">Sign Up</h2>
+        <h2 className="text-2xl font-bold text-center mb-6">Sign In</h2>
         
-        <form onSubmit={handleSignUp} className="space-y-4">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-              className="w-full p-2 border rounded mt-1"
-              placeholder="Enter your name"
-            />
-          </div>
-
+        <form onSubmit={handleSignIn} className="space-y-4">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">
               Email
@@ -70,26 +47,11 @@ function Signup() {
             />
           </div>
 
-          <div>
-            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
-              Confirm Password
-            </label>
-            <input
-              type="password"
-              id="confirmPassword"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-              className="w-full p-2 border rounded mt-1"
-              placeholder="Confirm your password"
-            />
-          </div>
-
           <button
             type="submit"
             className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
           >
-            Sign Up
+            Sign In
           </button>
         </form>
       </div>
@@ -97,4 +59,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Login;
